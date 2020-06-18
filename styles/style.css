@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Poiret+One&display=swap');
+
+button {
+  background: #fff;
+  color: #111111;
+  border-style: outset;
+  border-color: #111111;
+  height: 50px;
+  width: 100px;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow:none;
+}
+
+
+body {
+  font-family: 'Monsterrat', sans-serif;
+}
+
+.js-bookmark-list-form{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bookmark-form {
+      display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.js-filter{
+ display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 0;
+}
+.book-list{
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+ul {
+  list-style: none;
+  margin: 10px 20px;
+        
+}
+li {
+  margin: 10px 40px;
+  padding: 10px 40px;
+  font-size: 20px;
+  border:3px solid #000;
+        padding:20px;
+}
+
+span {
+  margin-left: 15px;
+}
+label {
+  margin: 10px 5px 10px 5px;
+  font-size: 20px;
+  padding: 10px 10px 5px 10px;
+}
+
+input {
+  margin: 10px 10px;
+  padding: 5px 5px;
+  border-style: solid;
+}
+.wrapper{
+  text-align: center
+}
+
+@media all and (min-width: 600px) {
+  
+.wrapper {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+}
