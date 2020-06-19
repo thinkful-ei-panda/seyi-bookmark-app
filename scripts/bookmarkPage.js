@@ -6,6 +6,7 @@ function render() {
     if (store.isAdding) {
         let bookmarkForm = template.bookmarkForm(getTitle(), getURL());
         $('main').html(bookmarkForm);
+        
     } else {
         const bookmarkList = template.createBookmark();
 

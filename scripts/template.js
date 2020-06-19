@@ -45,9 +45,9 @@ function bookmarkForm(title, url) {
 
   const form = `<form class = "js-bookmark-list-form" id="js-bookmark-list-form">
       <label for="title">Add Bookmark Title:</label>
-      <input type="text" name="title" value = ${title} id="title" required>
+      <input type="text" name="title" id="title" required value = ${title}  >
       <label for="website">Website URL:</label>
-      <input type="link" name="url" value = ${url} id="link" required>
+      <input type=text name="url" id="link" required value = ${url}>
       <select id="rating" name="rating" required>
         <option value="">Please Select A Rating</option>
         <option value="5">5 Stars</option>
