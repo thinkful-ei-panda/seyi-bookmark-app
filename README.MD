@@ -28,6 +28,7 @@ As a user:
 - (Extension feature - optional) I can edit the rating and description of a bookmark in my list
 
 ## Technical Requirements
+
 - Use fetch for AJAX calls and jQuery for DOM manipulation
 
 - Use namespacing to adhere to good architecture practices
