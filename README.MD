@@ -51,8 +51,3 @@ As a user:
 - Visually and functionally solid in viewports for mobile and desktop
 
 - Follow a11y best practices
-
-- Refer back to the accessibility checklist and the lesson on forms
-I can add bookmarks to my bookmark list. Bookmarks contain:
-title
-
