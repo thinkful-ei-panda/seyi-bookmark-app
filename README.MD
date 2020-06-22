@@ -36,9 +36,9 @@ As a user:
 
 - Create modules in separate files to organize your code
 
-- Logically group your functions (e.g. API methods, store methods...)
+- Logically group functions 
 
-- Keep your Data out of the DOM
+- Keep  Data out of the DOM
 
 - No direct DOM manipulation in your event handlers!
 
