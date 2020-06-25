@@ -30,11 +30,8 @@ function getID(bookmark) {
 function handleNewButton() {
     $('main').on('click', '.js-create-bookmark-button', event =>{
         event.preventDefault();
-        store.isAdding = !store.isAdding;
+        store.isAdding = true;
         render();
-        // store.filterMenuOpen = false;
-        // store.setExpansionsFalse();
-        // render('footer', '');
     });
 }
 
@@ -52,7 +49,7 @@ function handleCreateButton() {
         api.createBookmarkAPI(input)
             .then(bookmarks => {
                 store.addBookmark(bookmarks);
-                store.isAdding = !store.isAdding;
+                store.isAdding = false;
                 render();
             })
             .catch((error) => {
@@ -68,7 +65,7 @@ function handleCancel() {
 
         
 
-        store.isAdding = !store.isAdding;
+        store.isAdding = false;
         render();
     });
 }
@@ -106,68 +103,11 @@ function handleExpand() {
 }
 
 
-/////////////////////////////////////////////////////
-
-
-// function handleNewButton() {
-//     $('body').on('.create-bookmark-button', function () {
-//         event.preventDefault();
-//         render('main', template.createEditTemplate($(".js-title-input").val(), $(".js-url-input").val()));
-//         // store.filterMenuOpen = false;
-//         // store.setExpansionsFalse();
-//         // render('footer', '');
-//     });
-
-// }
-
-// function handleCreateButton() {
-//     $('main').on('submit', '#js-creation-form', function () {
-//         const title = $('#url-input').val();
-//         const url = $('#title-input').val();
-//         const desc = $('#description').val();
-
-//         const creation = store.createBookmark(title, url);
-//         creation.desc = desc;
-
-//         api.createBookmark(creation)
-//             .then((creation) => {
-//                 store.addBookmark(creation);
-//                 checkInitial();
-//             })
-//             .catch((error) => {
-//                 store.setError(error.message);
-//                 renderError();
-//             });
-//         store.rating = 0;
-
-//     });
-// }
-// function checkInitial() {
-//     if (store.bookmarks.length > 0) {
-//         render('main', template.generateBookmarksTemplate);
-//         // store.filterMenuOpen = false;
-//         // render('footer', template.footerTemplate());
-//     } 
-//     //else {
-//     //     render('main', template.initialViewTemplate);
-//     // }
-// }
-
-// function renderError() {
-//     if (store.error) {
-//         const errorHtml = template.generateError(store.error);
-//         $('.error-container').html(errorHtml);
-//     } else {
-//         $('.error-container').empty();
-//     }
-// }
 
 
 function bindEventListeners() {
-    // renderError();
     handleNewButton();
     handleCreateButton();
-    // checkInitial();
     handleCancel();
     handleDelete();
     handleFilter();
@@ -178,5 +118,4 @@ function bindEventListeners() {
 export default {
     render,
     bindEventListeners,
-    // checkInitial,
 };
