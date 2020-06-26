@@ -11,16 +11,18 @@ function homeScreen(htmlList) {
 
     <div>
       <form class="bookmark-form">
-        <label for="title">Add Bookmark Title:</label>
+        <label for="title-input">Add Bookmark Title:</label>
         <input type="text" name="title-input" class="js-title-input" placeholder="Title" required>
-        <label for="website">Website URL:</label>
+        <label for="url-input">Website URL:</label>
         <input type="text" name="url-input" class="js-url-input" placeholder="https://" required>
         <button class="js-create-bookmark-button">New</button>
       </form>
       </div>
     <div>
+
+      <label for="filter">Filter by Rating:</label>
       <select class "js-filter" id="js-filter" name="filter">
-        <option value="">Filter By Rating</option>
+        <option value="">Select</option>
         <option value="5">5 Stars</option>
         <option value="4">4 Stars</option>
         <option value="3">3 Stars</option>
@@ -48,8 +50,10 @@ function bookmarkForm(title, url) {
   const form = `<form class = "js-bookmark-list-form" id="js-bookmark-list-form">
       <label for="title">Add Bookmark Title:</label>
       <input type="text" name="title" id="title" required value = ${title}  >
-      <label for="website">Website URL:</label>
+      <label for="url">Website URL:</label>
       <input type=text name="url" id="link" required value = ${url}>
+
+      <label for="rating">Select Rating:</label>
       <select id="rating" name="rating" required>
         <option value="">Please Select A Rating</option>
         <option value="5">5 Stars</option>
@@ -58,7 +62,7 @@ function bookmarkForm(title, url) {
         <option value="2">2 Stars</option>
         <option value="1">1 Star</option>
       </select>
-      <label for="descript">Write Description Here:</label>
+      <label for="desc">Write Description Here:</label>
       <input type="text" name="desc" placeholder="Add Description Here" id="desc" required>
       ${error}
       <button class="js-submit" type="submit">Create</button>
