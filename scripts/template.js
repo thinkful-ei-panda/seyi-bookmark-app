@@ -4,6 +4,7 @@ import store from './store.js';
 function homeScreen(htmlList) {
   let htmlHome =`
   <div class="wrapper">
+  
     <div>
       <header>
         <h1>My Bookmarks</h1>
@@ -12,15 +13,15 @@ function homeScreen(htmlList) {
     <div>
       <form class="bookmark-form">
         <label for="title-input">Add Bookmark Title:</label>
-        <input type="text" name="title-input" class="js-title-input" placeholder="Title" required>
+        <input type="text" id="title-input" name="title-input" class="js-title-input" placeholder="Title" required>
         <label for="url-input">Website URL:</label>
-        <input type="text" name="url-input" class="js-url-input" placeholder="https://" required>
+        <input type="text" id="url-input" name="url-input" class="js-url-input" placeholder="https://" required>
         <button class="js-create-bookmark-button">New</button>
       </form>
       </div>
     <div>
 
-      <label for="filter">Filter by Rating:</label>
+      <label for="js-filter">Filter by Rating:</label>
       <select class "js-filter" id="js-filter" name="filter">
         <option value="">Select</option>
         <option value="5">5 Stars</option>
@@ -47,10 +48,13 @@ function bookmarkForm(title, url) {
     error = `${store.error}`;
   }
 
-  const form = `<form class = "js-bookmark-list-form" id="js-bookmark-list-form">
+  const form = `
+  
+    <form class = "js-bookmark-list-form" id="js-bookmark-list-form">
+    <div class="error-container"></div>
       <label for="title">Add Bookmark Title:</label>
       <input type="text" name="title" id="title" required value = ${title}  >
-      <label for="url">Website URL:</label>
+      <label for="link">Website URL:</label>
       <input type=text name="url" id="link" required value = ${url}>
 
       <label for="rating">Select Rating:</label>
@@ -63,7 +67,7 @@ function bookmarkForm(title, url) {
         <option value="1">1 Star</option>
       </select>
       <label for="desc">Write Description Here:</label>
-      <input type="text" name="desc" placeholder="Add Description Here" id="desc" required>
+      <input id="desc type="text" name="desc" placeholder="Add Description Here" " required>
       ${error}
       <button class="js-submit" type="submit">Create</button>
       <button class="js-cancel" type="cancel">Cancel</button>
@@ -105,6 +109,14 @@ function createBookmark() {
   return homeScreen(list);
 }
 
+const generateError = function (message) {
+  return `
+      <section class="error-content">
+        <p>${message}</p>
+      </section>
+    `;
+};
+
 
 
 
@@ -112,5 +124,6 @@ export default {
   homeScreen,
   bookmarkForm,
   createBookmark,
+  generateError,
     
 };

@@ -1,6 +1,6 @@
 
 const bookmarks = [];
-const error = null;
+let error = null;
 const filter = 1;
 const expanded = { expanded: false };
 const isAdding = false;
@@ -19,15 +19,14 @@ function remove(id) {
     this.bookmarks = this.bookmarks.filter(curr => curr.id !== id);
 }
 
-function makeError() {
-    this.error = error;
+function makeError(input) {
+    this.error = input;
 }
 
 export default {
     bookmarks,
     remove,
     find,
- 
     addBookmark,
     filter,
     error,

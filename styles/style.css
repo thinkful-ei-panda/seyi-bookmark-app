@@ -74,8 +74,15 @@ input {
 .wrapper{
   text-align: center
 }
+.error-content p{
+  color: rgb(255, 0, 0);
+  font-weight: 500px;
+  font-size: 20px;
+  align-self: center;
+  margin-top: 60px;
+}
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 900px) {
   
 .wrapper {
     width: 80%;

@@ -4,6 +4,7 @@ import api from './api.js';
 
 function render() {
     if (store.isAdding) {
+        
         let bookmarkForm = template.bookmarkForm(getTitle(), getURL());
         $('main').html(bookmarkForm);
         
@@ -15,12 +16,22 @@ function render() {
 }
 
 function getTitle() {
+    
     let ans = $(".js-title-input").val();
+
+    if(ans === 'undefined') {
+        return ''
+    }
     return ans;
 }
 
 function getURL() {
     let ans = $(".js-url-input").val();
+
+    if(ans === 'undefined') {
+        return ''
+    }
+
     return ans;
 }
 function getID(bookmark) {
@@ -54,7 +65,7 @@ function handleCreateButton() {
             })
             .catch((error) => {
                 store.makeError(error.message);
-                render();
+                renderError();
             });
     });
 }
@@ -62,11 +73,10 @@ function handleCreateButton() {
 function handleCancel() {
     $('main').on('click', '.js-cancel', event => {
         event.preventDefault();
-
-        
-
         store.isAdding = false;
         render();
+        store.makeError(null);
+        renderError();
     });
 }
 
@@ -81,7 +91,7 @@ function handleDelete() {
             })
             .catch((error) => {
                 store.makeError(error.message);
-                render();
+                renderError();
             });
     });
 }
@@ -101,6 +111,15 @@ function handleExpand() {
         render();
     });
 }
+
+const renderError = function () {
+    if (store.error !== null) {
+      const errorHTML = template.generateError(store.error);
+      $('.error-container').html(errorHTML);
+    } else {
+      $('.error-container').empty();
+    }
+  };
 
 
 
