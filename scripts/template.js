@@ -67,7 +67,7 @@ function bookmarkForm(title, url) {
         <option value="1">1 Star</option>
       </select>
       <label for="desc">Write Description Here:</label>
-      <input id="desc type="text" name="desc" placeholder="Add Description Here" " required>
+      <input id="desc" type="text" name="desc" placeholder="Add Description Here" " required>
       ${error}
       <button class="js-submit" type="submit">Create</button>
       <button class="js-cancel" type="cancel">Cancel</button>
